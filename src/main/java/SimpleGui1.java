@@ -1,4 +1,3 @@
-import javax.management.remote.JMXConnectorFactory;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,9 +13,6 @@ public class SimpleGui1 implements ActionListener {
 
     public void go() {
         JFrame frame = new JFrame();
-        button = new JButton("generate password");
-        button.addActionListener(this);
-        frame.getContentPane().add(button);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 400);
         Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize(),
@@ -30,6 +26,21 @@ public class SimpleGui1 implements ActionListener {
         frame.setLocation((sSize.width - fSize.width) / 2,
                 (sSize.height - fSize.height) / 2);
         frame.setVisible(true);
+
+
+
+        JTextArea textArea = new JTextArea();
+        frame.getContentPane().add(textArea);
+
+        button = new JButton("generate password");
+        frame.getContentPane().add(button);
+        button.addActionListener(this);
+
+        frame.getContentPane().add(BorderLayout.SOUTH,button);
+        frame.getContentPane().add(BorderLayout.CENTER,textArea);
+
+
+
     }
        public void actionPerformed(ActionEvent event){
            button.setText("Click");
