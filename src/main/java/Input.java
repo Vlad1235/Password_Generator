@@ -15,7 +15,7 @@ public class Input{
         return passwGen();
     }
 
-    private  String passwGen() {
+    private String passwGen() {
         //if (this.count_value < 1) return "";
         StringBuilder s = new StringBuilder();
         Random r = new Random();

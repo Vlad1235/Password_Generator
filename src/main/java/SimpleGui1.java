@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 public class SimpleGui1 implements ActionListener {
     JButton button;
+    Input input;
+    JTextField jTextField;
 
     public static void main(String[] args) {
         SimpleGui1 gui = new SimpleGui1();
@@ -27,22 +29,31 @@ public class SimpleGui1 implements ActionListener {
                 (sSize.height - fSize.height) / 2);
         frame.setVisible(true);
 
+        jTextField = new JTextField();
+        frame.getContentPane().add(jTextField);
+        jTextField.addActionListener(this);
 
-
-        JTextArea textArea = new JTextArea();
-        frame.getContentPane().add(textArea);
+//        JTextArea textArea = new JTextArea();
+//        frame.getContentPane().add(textArea);
 
         button = new JButton("generate password");
         frame.getContentPane().add(button);
         button.addActionListener(this);
 
         frame.getContentPane().add(BorderLayout.SOUTH,button);
-        frame.getContentPane().add(BorderLayout.CENTER,textArea);
+//        frame.getContentPane().add(BorderLayout.CENTER,textArea);
+        frame.getContentPane().add(BorderLayout.CENTER,jTextField);
+
 
 
 
     }
        public void actionPerformed(ActionEvent event){
-           button.setText("Click");
+           jTextField.getText();
+           int x = Integer.valueOf(jTextField.getText());
+           input = new Input(x);
+           String generated_password = input.getCount_value();
+           //button.setText(generated_password);
+           JOptionPane.showMessageDialog(null,generated_password,"Generated password",JOptionPane.INFORMATION_MESSAGE);
         }
 }
