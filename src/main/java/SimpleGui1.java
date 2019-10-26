@@ -27,23 +27,20 @@ public class SimpleGui1 implements ActionListener {
         }
         frame.setLocation((sSize.width - fSize.width) / 2,
                 (sSize.height - fSize.height) / 2);
-        frame.setVisible(true);
 
         jTextField = new JTextField();
         frame.getContentPane().add(jTextField);
         jTextField.addActionListener(this);
 
-//        JTextArea textArea = new JTextArea();
-//        frame.getContentPane().add(textArea);
 
         button = new JButton("generate password");
         frame.getContentPane().add(button);
         button.addActionListener(this);
 
         frame.getContentPane().add(BorderLayout.SOUTH,button);
-//        frame.getContentPane().add(BorderLayout.CENTER,textArea);
         frame.getContentPane().add(BorderLayout.CENTER,jTextField);
 
+        frame.setVisible(true);
 
 
 
