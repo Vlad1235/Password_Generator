@@ -7,7 +7,7 @@ public class Input{
         if(number>1) {
             this.count_value = number;
         } else {
-            System.err.print("Password length is too short");
+            System.exit(1);
         }
     }
 
@@ -16,7 +16,7 @@ public class Input{
     }
 
     private String passwGen() {
-        //if (this.count_value < 1) return "";
+        if (this.count_value < 1) return "";
         StringBuilder s = new StringBuilder();
         Random r = new Random();
         char[] arr = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
